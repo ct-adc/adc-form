@@ -5,15 +5,19 @@
 
         </div>
         <div class="panel-footer">
-            <span :class="limitedLength!==-1 && content.length>limitedLength ? 'text-danger' : 'text-success'">{{content.length}}</span>
+            <span :class="limitedLength!==-1 && getContentLength(content)>limitedLength ? 'text-danger' : 'text-success'">{{getContentLength(content)}}</span>
             <template v-if="limitedLength!==-1">
                 /{{limitedLength}}
+                <span class="pull-right text-danger" v-if="getContentLength(content)>limitedLength">
+                    字数超出限制!
+                </span>
             </template>
         </div>
     </div>
 </template>
 
 <script type="es6">
+    import utility from 'ct-utility';
     export default{
         name: 'ct-adc-textarea',
         props: {
@@ -28,6 +32,10 @@
             cut: {
                 type: Boolean,
                 default: false
+            },
+            byByte:{
+                type:Boolean,
+                default:false
             }
         },
         data(){
@@ -46,6 +54,13 @@
         methods: {
             initContent(){
                 this.content = this.value;
+            },
+            getContentLength(str){
+                if(this.byByte){
+                    return utility.base.getByteLen(str);
+                }else{
+                    return str.length;
+                }
             },
             getContent(){
                 return this.content;
@@ -66,7 +81,11 @@
                     }
                 }
                 if (cut) {
-                    this.content = newVal.substr(0, this.limitedLength);
+                    if(this.byByte){
+                        this.content=utility.base.subByte(newVal,this.limitedLength,true);
+                    }else{
+                        this.content = newVal.substr(0, this.limitedLength);
+                    }
                     //don't emit event in this circle. it will emit in the next watch
                 } else {
                     if (newVal !== oldVal) {
