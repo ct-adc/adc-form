@@ -9,7 +9,7 @@ new Vue({
         'ct-adc-textarea':Textarea
     },
     data:{
-        limitedLength:200,
+        limitedLength:-1,
         cut:false
     },
     methods:{

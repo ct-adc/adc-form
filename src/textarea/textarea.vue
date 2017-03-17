@@ -5,7 +5,10 @@
 
         </div>
         <div class="panel-footer">
-            <span :class="{'text-danger':content.length>limitedLength,'text-success':content.length<=limitedLength}">{{content.length}}</span>/{{limitedLength}}
+            <span :class="limitedLength!==-1 && content.length>limitedLength ? 'text-danger' : 'text-success'">{{content.length}}</span>
+            <template v-if="limitedLength!==-1">
+                /{{limitedLength}}
+            </template>
         </div>
     </div>
 </template>
@@ -20,7 +23,7 @@
             },
             limitedLength: {
                 type: Number,
-                default: 500
+                default: -1
             },
             cut: {
                 type: Boolean,
@@ -37,7 +40,7 @@
         },
         computed:{
             pass(){
-                return this.content.length <= this.limitedLength;
+                return this.limitedLength===-1 || (this.limitedLength!==-1 && this.content.length <= this.limitedLength);
             }
         },
         methods: {
@@ -57,7 +60,7 @@
             },
             content(newVal, oldVal){
                 var cut = false;
-                if (newVal.length > this.limitedLength) {
+                if (this.limitedLength!==-1 && newVal.length > this.limitedLength) {
                     if (this.cut) {
                         cut = true;
                     }
