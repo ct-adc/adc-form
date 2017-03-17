@@ -20,7 +20,7 @@ Vue.component(Textarea.name,Textarea);
 ## 参数说明
 
 参数 | 描述 | 类型 | 默认值
---- | --- | --- |
+--- | --- | --- | ---
 value | textarea中的初始值 | String | ''
 limitedLength | 控制的字符长度 | Number | -1（不限）
 cut | 超出长度时是否要截断内容 | Boolean | false
