@@ -4,12 +4,14 @@
             <div class="input-group">
                 <date ref="beginDate"
                       :initial-date="beginDate"
-                      :ops="{placeholder:beginPlaceholder,type:'datetime'}" @change="changeBeginDate"></date>
+                      :ops="beginOps"
+                      @change="changeBeginDate"></date>
                 <span class="input-group-addon">至</span>
                 <date ref="endDate"
                       :initial-date="endDate"
-                      :ops="{placeholder:endPlaceholder,type:'datetime'}"
-                      style="border-radius: 0 4px 4px 0;" @change="changeEndDate"></date>
+                      :ops="endOps"
+                      style="border-radius: 0 4px 4px 0;"
+                      @change="changeEndDate"></date>
             </div>
         </div>
     </div>

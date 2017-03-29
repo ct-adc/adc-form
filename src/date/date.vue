@@ -61,7 +61,7 @@
             var ops = {
                 date_format: this.mixedOps.dateFormat,
                 timeShow: this.mixedOps.type === 'date' ? 0 : 1,
-                timeStart: this.mixedOps.timeStart,
+                time_start: this.mixedOps.timeStart,
                 timeBtn: this.mixedOps.timeBtn ? 1 : 0,
                 change(){
                     var date = that.$refs.date.value;
@@ -69,6 +69,7 @@
                     that.$emit('change', date);
                 }
             };
+            console.log(ops);
             $(this.$refs.date).jdPicker(ops);
             if (this.date != '') {
                 this.$refs.date.value = this.date;

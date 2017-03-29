@@ -11,7 +11,9 @@ new Vue({
         dates:InputDates
     },
     data:{
-        date:'2017/01/01'
+        date:'2017/01/01',
+        beginDate:'2017/01/01',
+        endDate:'2017/09/09'
     },
     methods:{
         change(date){

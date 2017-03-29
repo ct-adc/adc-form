@@ -12,7 +12,11 @@
     <date @change="change" :initial-date="date" ref="date"></date>
     <button type="button" class="btn btn-sm btn-primary" @click="getDate">获取时间</button>
 
-    <dates ref="dates"></dates>
+    <dates ref="dates"
+           :initial-begin-date="beginDate"
+           :initial-end-date="endDate"
+           :begin-ops="{type:'datetime'}"
+           :end-ops="{type:'datetime'}"></dates>
     <button type="button" class="btn btn-sm btn-primary" @click="getDates">获取时间</button>
 </div>
 <script src="http://static.tcy365.com/cdn/jquery/2.1.0/jquery.js"></script>
