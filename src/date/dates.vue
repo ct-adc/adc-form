@@ -17,11 +17,11 @@
     </div>
 </template>
 <script type="es6">
-    import InputDate from './date';
+    import DateInput from './date';
     export default{
         name: 'dates',
         components: {
-            date:InputDate
+            date:DateInput
         },
         props: {
             beginPlaceholder: {

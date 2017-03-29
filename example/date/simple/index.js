@@ -2,13 +2,13 @@
  * @author rubyisapm
  */
 import Vue from 'vue';
-import InputDate from '../../../src/date/date';
-import InputDates from '../../../src/date/dates';
+import DateInput from '../../../src/date/date';
+import DatesInput from '../../../src/date/dates';
 new Vue({
     el:'#app',
     components:{
-        date:InputDate,
-        dates:InputDates
+        date:DateInput,
+        dates:DatesInput
     },
     data:{
         date:'2017/01/01',
