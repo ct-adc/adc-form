@@ -4,7 +4,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var extractCSS = new ExtractTextPlugin('css/[name].min.css');
 module.exports = {
     entry: {
-        textareaSimple: './example/textarea/simple/index.js'
+        textareaSimple: './example/textarea/simple/index.js',
+        dateSimple: './example/date/simple/index.js'
     },
     output: {
         path: path.resolve(__dirname, './asset'),
