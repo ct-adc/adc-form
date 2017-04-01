@@ -9,15 +9,26 @@
 </head>
 <body>
 <div id="app">
-    <date @change="change" :initial-date="date" ref="date"></date>
-    <button type="button" class="btn btn-sm btn-primary" @click="getDate">获取时间</button>
-
-    <dates ref="dates"
-           :initial-begin-date="beginDate"
-           :initial-end-date="endDate"
-           :begin-ops="{type:'datetime'}"
-           :end-ops="{type:'datetime'}"></dates>
-    <button type="button" class="btn btn-sm btn-primary" @click="getDates">获取时间</button>
+    <div class="row">
+        <div class="col-sm-5">
+            <date @change="change" :initial-date="date" ref="date"></date>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-sm btn-primary" @click="getDate">获取时间</button>
+        </div>
+    </div>
+    <div class="row mt10">
+        <div class="col-sm-5">
+            <dates ref="dates"
+                   :initial-begin-date="beginDate"
+                   :initial-end-date="endDate"
+                   :begin-ops="{type:'datetime'}"
+                   :end-ops="{type:'datetime'}" begin-placeholder="开始" end-placeholder="结束"></dates>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-sm btn-primary" @click="getDates">获取时间</button>
+        </div>
+    </div>
 </div>
 <script src="http://static.tcy365.com/cdn/jquery/2.1.0/jquery.js"></script>
 <script src="http://static.tcy365.com/cdn/bootstrap/3.3.5/js/bootstrap.min.js"></script>

@@ -8,6 +8,10 @@
 
 [textarea](https://github.com/ct-adc/adc-form/tree/master/src/textarea/readme.md)
 
+[date&dates](https://github.com/ct-adc/adc-form/tree/master/src/date/readme.md)
+
 ## changeLog
 
 [changeLog](https://github.com/ct-adc/adc-form/tree/master/changeLog.md)
+
+

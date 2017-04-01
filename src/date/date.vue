@@ -1,7 +1,7 @@
 <template>
     <input type="text"
            class="form-control"
-           :placeholder="ops.placeholder"
+           :placeholder="placeholder"
            ref="date">
 </template>
 <script type="es6">
@@ -11,6 +11,10 @@
         props: {
             initialDate:{
                 type:[String,Number],
+                default:''
+            },
+            placeholder:{
+                type:String,
                 default:''
             },
             ops: {
@@ -30,7 +34,7 @@
                 var defaultOps={
                     type:'date',
                     placeholder:'请选择',
-                    dateFormat:'YYYY/MM/dd',
+                    dateFormat:'yyyy/MM/dd',
                     timeFormat:'HH:mm:ss',
                     timeStart:'00:00:00',
                     timeBtn:true
@@ -43,14 +47,14 @@
                 return this.date;
             },
             initDate(){
-                if (this.initialDate == parseInt(this.initialDate)) {
+                if (this.initialDate == parseInt(this.initialDate) && this.initialDate!==0) {
                     if (this.mixedOps.type === 'date') {
                         this.date = utility.dateFilter(this.initialDate, this.mixedOps.dateFormat)
                     } else {
                         this.date = utility.dateFilter(this.initialDate, this.mixedOps.dateFormat + ' '+this.mixedOps.timeFormat);
                     }
                 } else {
-                    this.date = this.initialDate;
+                    this.date = '';
                 }
                 this.$refs.date.value=this.date;
             }
@@ -69,7 +73,6 @@
                     that.$emit('change', date);
                 }
             };
-            console.log(ops);
             $(this.$refs.date).jdPicker(ops);
             if (this.date != '') {
                 this.$refs.date.value = this.date;
