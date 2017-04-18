@@ -4,7 +4,7 @@
 
 - 修复 当dates的related为true时日期不关联的bug
 - 修改 jdpicker依赖版本为2.0.0, 和utility统一日期格式
--
+- 优化 时间格式支持时间戳
 
 ### 0.1.1
 
