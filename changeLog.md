@@ -1,5 +1,11 @@
 ## 更新日志
 
+### 1.0.0
+
+- 修复 当dates的related为true时日期不关联的bug
+- 修改 jdpicker依赖版本为2.0.0, 和utility统一日期格式
+-
+
 ### 0.1.1
 
 - 修复 将format中的MM改为mm

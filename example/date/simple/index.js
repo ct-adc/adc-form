@@ -11,24 +11,27 @@ new Vue({
         dates:DatesInput
     },
     data:{
-        date:'2017-01-01',
+        date:1492272000000,
         dateOps:{
-            dateFormat:'YYYY-mm-dd'
+            dateFormat:'yyyy-MM-dd'
         },
-        beginDate:'2017/01/01',
-        endDate:'2017/09/09'
+        beginDate:1484841600000,
+        endDate:1485705600000
     },
     methods:{
-        change(date){
-            console.log(date)
-        },
-        getDate(){
-            var date=this.$refs.date.getDate();
+        changeDate(date){
             console.log(date);
         },
-        getDates(){
-            var dates=this.$refs.dates.getDates();
+        changeDates(dates){
             console.log(dates)
+        },
+        getDate(){
+            console.log(this.$refs.date.getDate(true));
+            console.log(this.$refs.date.getDate(false));
+        },
+        getDates(){
+            console.log(this.$refs.dates.getDates(true));
+            console.log(this.$refs.dates.getDates(false));
         }
     }
 })
