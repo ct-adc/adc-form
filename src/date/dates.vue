@@ -57,11 +57,18 @@
         },
         data(){
             return {
-                beginDate: this.initialBeginDate,
-                endDate: this.initialEndDate
+                beginDate: '',
+                endDate: ''
             }
         },
+        created(){
+            this.initDates();
+        },
         methods: {
+            initDates(){
+                this.beginDate = this.initialBeginDate === 0 ? '' : this.initialBeginDate;
+                this.endDate = this.initialEndDate === 0 ? '' : this.initialEndDate;
+            },
             getDates(readable){
                 return {
                     begin: this.$refs.beginDate.getDate(readable),
@@ -73,7 +80,7 @@
                 if (this.related) {
                     this.interveneDate(date, this.endDate, true);
                 }
-                this.$nextTick(function(){
+                this.$nextTick(function() {
                     this.$emit('change', this.getDates(true));
                 })
             },
@@ -82,26 +89,26 @@
                 if (this.related) {
                     this.interveneDate(this.beginDate, date, false);
                 }
-                this.$nextTick(function(){
+                this.$nextTick(function() {
                     this.$emit('change', this.getDates(true));
                 })
             },
             interveneDate(beginDate, endDate, beginRefer){
                 var beginTime;
-                if(beginDate === ''){
-                    beginTime=0;
-                }else if(parseInt(beginDate)===beginDate){
-                    beginTime=beginDate;
-                }else{
-                    beginTime=+new Date((beginDate + '').replace(/[^\d:]/g, '/'));
+                if (beginDate === '') {
+                    beginTime = 0;
+                } else if (parseInt(beginDate) === beginDate) {
+                    beginTime = beginDate;
+                } else {
+                    beginTime = +new Date((beginDate + '').replace(/[^\d:]/g, '/'));
                 }
                 var endTime;
-                if(endDate === ''){
-                    endTime=0;
-                }else if(parseInt(endDate)===endDate){
-                    endTime=endDate;
-                }else{
-                    endTime=+new Date((endDate + '').replace(/[^\d:]/g, '/'));
+                if (endDate === '') {
+                    endTime = 0;
+                } else if (parseInt(endDate) === endDate) {
+                    endTime = endDate;
+                } else {
+                    endTime = +new Date((endDate + '').replace(/[^\d:]/g, '/'));
                 }
                 if (beginRefer && (endDate === '' || beginTime > endTime)) {
                     this.endDate = beginDate;
@@ -113,10 +120,10 @@
         },
         watch: {
             initialBeginDate(newVal){
-                this.beginDate=newVal;
+                this.beginDate = newVal === 0 ? '' : newVal;
             },
             initialEndDate(newVal){
-                this.EndDate = newVal;
+                this.EndDate = newVal === 0 ? '' : newVal;
             }
         }
     }

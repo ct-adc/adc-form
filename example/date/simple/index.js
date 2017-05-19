@@ -16,7 +16,7 @@ new Vue({
             dateFormat:'yyyy-MM-dd'
         },
         beginDate:1484841600000,
-        endDate:1485705600000
+        endDate:0
     },
     methods:{
         changeDate(date){
