@@ -36,6 +36,24 @@
             <button type="button" class="btn btn-sm btn-primary" @click="getDates">获取时间</button>
         </div>
     </div>
+
+
+    <div class="row mt10">
+        <div class="col-sm-5">
+            <dates ref="dates2"
+                   related
+                   :initial-begin-date="beginDate"
+                   :initial-end-date="endDate"
+                   :begin-ops="{dateFormat:'yyyy-MM-dd'}"
+                   :end-ops="{dateFormat:'yyyy-MM-dd'}"
+                   begin-placeholder="开始"
+                   end-placeholder="结束" @change="changeDates"></dates>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-sm btn-primary" @click="getDates2">获取时间</button>
+        </div>
+    </div>
+
 </div>
 <script src="http://static.tcy365.com/cdn/jquery/2.1.0/jquery.js"></script>
 <script src="http://static.tcy365.com/cdn/bootstrap/3.3.5/js/bootstrap.min.js"></script>

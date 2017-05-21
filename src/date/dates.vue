@@ -69,15 +69,21 @@
                 this.beginDate = this.initialBeginDate === 0 ? '' : this.initialBeginDate;
                 this.endDate = this.initialEndDate === 0 ? '' : this.initialEndDate;
             },
-            getDates(readable){
+            getDates(readable,endTransfered){
+                var begin=this.$refs.beginDate.getDate(readable),
+                        end=this.$refs.endDate.getDate(readable),
+                        isSameDay=begin===end;
+                if(isSameDay && !readable && endTransfered && (this.beginOps.type==='date' || typeof this.beginOps.type==='undefined')  && (this.endOps.type==='date' || typeof this.endOps.type==='undefined')){
+                    end+=86400000-1;
+                }
                 return {
-                    begin: this.$refs.beginDate.getDate(readable),
-                    end: this.$refs.endDate.getDate(readable)
+                    begin: begin,
+                    end: end
                 }
             },
             changeBeginDate(date){
                 this.beginDate = date;
-                if (this.related) {
+                if (date!=='' && this.related) {
                     this.interveneDate(date, this.endDate, true);
                 }
                 this.$nextTick(function() {
@@ -86,7 +92,7 @@
             },
             changeEndDate(date){
                 this.endDate = date;
-                if (this.related) {
+                if (date!=='' && this.related) {
                     this.interveneDate(this.beginDate, date, false);
                 }
                 this.$nextTick(function() {
