@@ -129,7 +129,7 @@
                 this.beginDate = newVal === 0 ? '' : newVal;
             },
             initialEndDate(newVal){
-                this.EndDate = newVal === 0 ? '' : newVal;
+                this.endDate = newVal === 0 ? '' : newVal;
             }
         }
     }

@@ -1,9 +1,6 @@
 /**
  * @author rubyisapm
  */
-/**
- * @author rubyisapm
- */
 var path = require('path');
 var webpack = require('webpack');
 module.exports = {

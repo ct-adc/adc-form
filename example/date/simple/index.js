@@ -5,20 +5,20 @@ import Vue from 'vue';
 import DateInput from '../../../src/date/date';
 import DatesInput from '../../../src/date/dates';
 new Vue({
-    el:'#app',
-    components:{
-        date:DateInput,
-        dates:DatesInput
+    el: '#app',
+    components: {
+        date: DateInput,
+        dates: DatesInput
     },
-    data:{
-        date:1492272000000,
-        dateOps:{
-            dateFormat:'yyyy-MM-dd'
+    data: {
+        date: 1492272000000,
+        dateOps: {
+            dateFormat: 'yyyy-MM-dd'
         },
-        beginDate:1484841600000,
-        endDate:0
+        beginDate: 0,
+        endDate: 0
     },
-    methods:{
+    methods: {
         changeDate(date){
             console.log(date);
         },
@@ -34,8 +34,12 @@ new Vue({
             console.log(this.$refs.dates.getDates(false));
         },
         getDates2(){
-            console.log(this.$refs.dates2.getDates(true,true));
-            console.log(this.$refs.dates2.getDates(false,true));
+            console.log(this.$refs.dates2.getDates(true, true));
+            console.log(this.$refs.dates2.getDates(false, true));
+        },
+        setDates(){
+            this.beginDate = 1484841600000;
+            this.endDate = 1484841600000;
         }
     }
 })
