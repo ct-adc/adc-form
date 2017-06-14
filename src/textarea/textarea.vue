@@ -1,8 +1,7 @@
 <template>
     <div class="panel panel-default">
-        <div class="panel-body">
+        <div class="panel-body p5">
             <textarea v-model="content"></textarea>
-
         </div>
         <div class="panel-footer">
             <span :class="limitedLength!==-1 && getContentLength(content)>limitedLength ? 'text-danger' : 'text-success'">{{getContentLength(content)}}</span>
