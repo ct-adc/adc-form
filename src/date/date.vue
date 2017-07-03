@@ -41,7 +41,7 @@
                 if(readable){
                     return this.date;
                 }else{
-                    return this.date==='' ? '' : +new Date(this.date.replace(/[^\d\:]/g,'\/'));
+                    return this.date==='' ? '' : +new Date(this.date.replace(/[^\d\:\s]/g,'\/'));
                 }
             },
             initDate(){

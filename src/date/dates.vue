@@ -106,7 +106,7 @@
                 } else if (parseInt(beginDate) === beginDate) {
                     beginTime = beginDate;
                 } else {
-                    beginTime = +new Date((beginDate + '').replace(/[^\d:]/g, '/'));
+                    beginTime = +new Date((beginDate + '').replace(/[^\d:\s]/g, '/'));
                 }
                 var endTime;
                 if (endDate === '') {
@@ -114,7 +114,7 @@
                 } else if (parseInt(endDate) === endDate) {
                     endTime = endDate;
                 } else {
-                    endTime = +new Date((endDate + '').replace(/[^\d:]/g, '/'));
+                    endTime = +new Date((endDate + '').replace(/[^\d:\s]/g, '/'));
                 }
                 if (beginRefer && (endDate === '' || beginTime > endTime)) {
                     this.endDate = beginDate;
