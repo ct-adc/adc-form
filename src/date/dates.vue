@@ -71,9 +71,9 @@
             },
             getDates(readable, endTransfered){
                 var begin = this.$refs.beginDate.getDate(readable),
-                        end = this.$refs.endDate.getDate(readable),
-                        isSameDay = begin === end;
-                if (isSameDay && !readable && endTransfered && (this.beginOps.type === 'date' || typeof this.beginOps.type === 'undefined') && (this.endOps.type === 'date' || typeof this.endOps.type === 'undefined')) {
+                        end = this.$refs.endDate.getDate(readable);
+
+                if (!readable && endTransfered && (this.beginOps.type === 'date' || typeof this.beginOps.type === 'undefined') && (this.endOps.type === 'date' || typeof this.endOps.type === 'undefined')) {
                     end += 86400000 - 1;
                 }
                 return {
