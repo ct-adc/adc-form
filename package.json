@@ -1,7 +1,7 @@
 {
   "name": "ct-adc-form",
   "description": "A Vue.js project",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "author": "skysunshine99 <skysunshine99@126.com>",
   "private": false,
   "scripts": {

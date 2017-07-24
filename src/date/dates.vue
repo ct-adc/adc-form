@@ -116,12 +116,29 @@
                 } else {
                     endTime = +new Date((endDate + '').replace(/[^\d:\s]/g, '/'));
                 }
+                var isSameDay = endTime != 0 && beginTime != 0 && endDate.replace(/^(\d{4})\D(\d{2})\D(\d{2}).*$/,'$1$2$3') === beginDate.replace(/^(\d{4})\D(\d{2})\D(\d{2}).*$/,'$1$2$3');
                 if (beginRefer && (endDate === '' || beginTime > endTime)) {
-                    this.endDate = beginDate;
+                    if (this.beginOps.type === 'datetime' && this.endOps.type === 'datetime' && (endDate === '' || !isSameDay)) {
+                        // 置为当天的endOps.timeStart
+                        this.endDate = beginDate.replace(/\d{2}:\d{2}:\d{2}/, this.endOps.timeStart || ' 00:00:00');
+                    } else {
+                        this.endDate = beginDate;
+                    }
                 }
                 if (!beginRefer && (beginDate === '' || beginTime > endTime)) {
-                    this.beginDate = endDate;
+                    if (this.beginOps.type === 'datetime' && this.endOps.type === 'datetime' && (beginDate === '' || !isSameDay)) {
+                        // 置为当天的beginOps.timeStart
+                        this.beginDate = endDate.replace(/\d{2}:\d{2}:\d{2}/, this.beginOps.timeStart || ' 00:00:00');
+                    } else {
+                        this.beginDate = endDate;
+                    }
                 }
+                //if (beginRefer && (endDate === '' || beginTime > endTime)) {
+                //    this.endDate = beginDate;
+                //}
+                //if (!beginRefer && (beginDate === '' || beginTime > endTime)) {
+                //    this.beginDate = endDate;
+                //}
             }
         },
         watch: {

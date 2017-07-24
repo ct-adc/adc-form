@@ -27,8 +27,8 @@
                    related
                    :initial-begin-date="beginTime"
                    :initial-end-date="endTime"
-                   :begin-ops="{type:'datetime',dateFormat:'yyyy-MM-dd'}"
-                   :end-ops="{type:'datetime',dateFormat:'yyyy-MM-dd'}"
+                   :begin-ops="{type:'datetime',timeStart:'00:00:00'}"
+                   :end-ops="{type:'datetime',timeStart:'23:59:59'}"
                    begin-placeholder="开始"
                    end-placeholder="结束" @change="changeDates"></dates>
         </div>
@@ -45,8 +45,6 @@
                    related
                    :initial-begin-date="beginDate"
                    :initial-end-date="endDate"
-                   :begin-ops="{dateFormat:'yyyy-MM-dd'}"
-                   :end-ops="{dateFormat:'yyyy-MM-dd'}"
                    begin-placeholder="开始"
                    end-placeholder="结束" @change="changeDates"></dates>
         </div>

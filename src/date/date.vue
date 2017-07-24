@@ -28,7 +28,7 @@
             mixedOps(){
                 var defaultOps={
                     type:'date',
-                    dateFormat:'yyyy/MM/dd',
+                    dateFormat:'yyyy-MM-dd',
                     timeFormat:'HH:mm:ss',
                     timeStart:'00:00:00',
                     timeBtn:true

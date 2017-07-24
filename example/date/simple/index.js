@@ -17,8 +17,8 @@ new Vue({
         },
         beginDate: '2017-01-01',
         endDate: '2017-03-01',
-        beginTime: '2017-01-01 19:00:00',
-        endTime: '2017-03-01 20:00:00'
+        beginTime: 0,
+        endTime: 0
     },
     methods: {
         changeDate(date){
