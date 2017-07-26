@@ -83,8 +83,10 @@
             },
             changeBeginDate(date){
                 this.beginDate = date;
+                var endDate=this.$refs.endDate.getDate(true);
+
                 if (date !== '' && this.related) {
-                    this.interveneDate(date, this.endDate, true);
+                    this.interveneDate(date, endDate, true);
                 }
                 this.$nextTick(function() {
                     this.$emit('change', this.getDates(true));
@@ -92,8 +94,10 @@
             },
             changeEndDate(date){
                 this.endDate = date;
+                var beginDate=this.$refs.beginDate.getDate(true);
+
                 if (date !== '' && this.related) {
-                    this.interveneDate(this.beginDate, date, false);
+                    this.interveneDate(beginDate, date, false);
                 }
                 this.$nextTick(function() {
                     this.$emit('change', this.getDates(true));
@@ -103,18 +107,14 @@
                 var beginTime;
                 if (beginDate === '') {
                     beginTime = 0;
-                } else if (parseInt(beginDate) === beginDate) {
-                    beginTime = beginDate;
                 } else {
-                    beginTime = +new Date((beginDate + '').replace(/[^\d:\s]/g, '/'));
+                    beginTime = +new Date(beginDate.replace(/[^\d\:\s]/g,'\/'));
                 }
                 var endTime;
                 if (endDate === '') {
                     endTime = 0;
-                } else if (parseInt(endDate) === endDate) {
-                    endTime = endDate;
                 } else {
-                    endTime = +new Date((endDate + '').replace(/[^\d:\s]/g, '/'));
+                    endTime = +new Date(endDate.replace(/[^\d\:\s]/g,'\/'));
                 }
                 var isSameDay = endTime != 0 && beginTime != 0 && endDate.replace(/^(\d{4})\D(\d{2})\D(\d{2}).*$/,'$1$2$3') === beginDate.replace(/^(\d{4})\D(\d{2})\D(\d{2}).*$/,'$1$2$3');
                 if (beginRefer && (endDate === '' || beginTime > endTime)) {
@@ -133,12 +133,6 @@
                         this.beginDate = endDate;
                     }
                 }
-                //if (beginRefer && (endDate === '' || beginTime > endTime)) {
-                //    this.endDate = beginDate;
-                //}
-                //if (!beginRefer && (beginDate === '' || beginTime > endTime)) {
-                //    this.beginDate = endDate;
-                //}
             }
         },
         watch: {
