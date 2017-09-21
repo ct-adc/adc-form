@@ -49,7 +49,21 @@ endOps | 结束日期的配置项 | Object | 见备注
     dateFormat:'yyyy/MM/dd',
     timeFormat:'HH:mm:ss',
     timeStart:'00:00:00',
-    timeBtn:true
+    timeBtn:true,
+    monthNames:["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+    shortMonthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+    shortMonthNames2: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    shortDayNames: ["日", "一", "二", "三", "四", "五", "六"],
+    errorOutOfRange: "选择的日期不符合规则",
+    selectableDays: [0, 1, 2, 3, 4, 5, 6],
+    nonSelectable: [],
+    recNonSelectable: [],
+    startOfWeek: 1,
+    showWeek: false,
+    selectWeek: false,
+    weekLabel: "周",
+    dateMin: "",
+    dateMax: ""
 }
 ```
 

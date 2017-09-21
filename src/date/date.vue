@@ -26,12 +26,45 @@
         },
         computed:{
             mixedOps(){
+                //month_names: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                //        short_month_names: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                //        short_month_names2: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                //        short_day_names: ["日", "一", "二", "三", "四", "五", "六"],
+                //        error_out_of_range: "选择的日期不符合规则",
+                //        selectable_days: [0, 1, 2, 3, 4, 5, 6],
+                //        non_selectable: [],
+                //        rec_non_selectable: [],
+                //        start_of_week: 1,
+                //        show_week: 0,
+                //        select_week: 0,
+                //        week_label: "周",
+                //        date_min: "",
+                //        date_max: "",
+                //        date_format: "yyyy/MM/dd",
+                //        time_format: "HH:mm:ss",
+                //        timeShow: 0,
+                //        timeBtn: 1,
                 var defaultOps={
                     type:'date',
                     dateFormat:'yyyy-MM-dd',
                     timeFormat:'HH:mm:ss',
                     timeStart:'00:00:00',
-                    timeBtn:true
+                    timeBtn:true,
+                    monthNames:["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                    shortMonthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                    shortMonthNames2: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    shortDayNames: ["日", "一", "二", "三", "四", "五", "六"],
+                    errorOutOfRange: "选择的日期不符合规则",
+                    selectableDays: [0, 1, 2, 3, 4, 5, 6],
+                    nonSelectable: [],
+                    recNonSelectable: [],
+                    startOfWeek: 1,
+                    showWeek: false,
+                    selectWeek: false,
+                    weekLabel: "周",
+                    dateMin: "",
+                    dateMax: ""
+
                 };
                 return Object.assign(defaultOps,this.ops);
             }
@@ -67,6 +100,20 @@
                 timeShow: this.mixedOps.type === 'date' ? 0 : 1,
                 time_start: this.mixedOps.timeStart,
                 timeBtn: this.mixedOps.timeBtn ? 1 : 0,
+                month_names: this.mixedOps.monthNames,
+                short_month_names: this.mixedOps.shortMonthNames,
+                short_month_names2: this.mixedOps.shortMonthNames2,
+                short_day_names: this.mixedOps.shortDayNames,
+                error_out_of_range: this.mixedOps.errorOutOfRange,
+                selectable_days: this.mixedOps.selectableDays,
+                non_selectable: this.mixedOps.nonSelectable,
+                rec_non_selectable: this.mixedOps.recNonSelectable,
+                start_of_week: this.mixedOps.startOfWeek,
+                show_week: this.mixedOps.showWeek ? 1 : 0,
+                select_week: this.mixedOps.selectWeek ? 1 : 0,
+                week_label: this.mixedOps.weekLabel,
+                date_min: this.mixedOps.dateMin,
+                date_max: this.mixedOps.dateMax,
                 change(){
                     var date = that.$refs.date.value;
                     that.date = date;

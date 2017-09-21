@@ -27,8 +27,8 @@
                    related
                    :initial-begin-date="beginTime"
                    :initial-end-date="endTime"
-                   :begin-ops="{type:'datetime',timeStart:'00:00:00'}"
-                   :end-ops="{type:'datetime',timeStart:'23:59:59'}"
+                   :begin-ops="{type:'datetime',timeStart:'00:00:00',dateMin:'2017-09-11'}"
+                   :end-ops="{type:'datetime',timeStart:'23:59:59',dateMax:'2017-09-29'}"
                    begin-placeholder="开始"
                    end-placeholder="结束" @change="changeDates"></dates>
         </div>
