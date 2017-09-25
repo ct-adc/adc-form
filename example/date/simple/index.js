@@ -36,7 +36,7 @@ new Vue({
         },
         getDates(){
             console.log(this.$refs.dates.getDates(true));
-            console.log(this.$refs.dates.getDates(false));
+            console.log(this.$refs.dates.getDates(false,true));
         },
         getDates2(){
             console.log(this.$refs.dates2.getDates(true, true));
