@@ -11,12 +11,12 @@ new Vue({
         dates: DatesInput
     },
     data: {
-        date: '2017-01-01 19:00:00',
+        date: +new Date(),
         dateOps: {
             dateFormat: 'yyyy-MM-dd'
         },
-        beginDate: '2017-01-01',
-        endDate: '2017-03-01',
+        beginDate: +new Date(),
+        endDate: +new Date(),
         beginTime: 0,
         endTime: 0
     },
