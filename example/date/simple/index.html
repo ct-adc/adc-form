@@ -5,7 +5,7 @@
     <title>list</title>
     <link href="http://static.tcy365.com/cdn/bootstrap/3.3.5/css/bootstrap.dz.min.css" rel="stylesheet">
     <link href="http://static.tcy365.com/cdn/bootstrap/3.3.5/css/theme.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://static.tcy365.com/cdn/component/jdpicker/2.0.0/jdpicker.css"/>
+    <link rel="stylesheet" href="http://static.tcy365.com/cdn/component/jdpicker/2.0.1/jdpicker.css"/>
 </head>
 <body>
 <div id="app">
@@ -25,12 +25,10 @@
         <div class="col-sm-5">
             <dates ref="dates"
                    related
-                   :initial-begin-date="beginTime"
-                   :initial-end-date="endTime"
-                   :begin-ops="{type:'date',dateMin:'2017-09-11'}"
-                   :end-ops="{type:'date',dateMax:'2017-09-29'}"
+                   :begin-ops="{type:'datetime',dateMin:'2017-09-11',dateMax:'2017-09-29'}"
+                   :end-ops="{type:'datetime',dateMin:'2017-09-11',dateMax:'2017-09-29'}"
                    begin-placeholder="开始"
-                   end-placeholder="结束" @change="changeDates"></dates>
+                   end-placeholder="结束"></dates>
         </div>
         <div class="col-sm-2">
             <button type="button" class="btn btn-sm btn-primary" @click="setDates">设置时间</button>
@@ -56,7 +54,7 @@
 </div>
 <script src="http://static.tcy365.com/cdn/jquery/2.1.0/jquery.js"></script>
 <script src="http://static.tcy365.com/cdn/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="http://static.tcy365.com/cdn/component/jdpicker/2.0.0/jdpicker.js"></script>
+<script src="http://static.tcy365.com/cdn/component/jdpicker/2.0.1/jdpicker.js"></script>
 <script src="/asset/js/dateSimple.bundle.js"></script>
 </body>
 </html>

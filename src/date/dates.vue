@@ -73,8 +73,12 @@
                 var begin = this.$refs.beginDate.getDate(readable),
                         end = this.$refs.endDate.getDate(readable);
 
-                if (!readable && endTransfered && (this.beginOps.type === 'date' || typeof this.beginOps.type === 'undefined') && (this.endOps.type === 'date' || typeof this.endOps.type === 'undefined')) {
+                if (!readable && endTransfered && (this.beginOps.type === 'date' || typeof this.beginOps.type === 'undefined') && (this.endOps.type === 'date' || typeof this.endOps.type === 'undefined') && end !== 0) {
                     end += 86400000 - 1;
+                }
+
+                if(!readable && endTransfered && this.beginOps.type === 'datetime' && end !== 0){
+                    end += 999;
                 }
                 return {
                     begin: begin,

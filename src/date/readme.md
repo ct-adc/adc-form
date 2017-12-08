@@ -63,8 +63,8 @@ related | 开始结束日期是否要联动 | Boolean | false
     showWeek: false,
     selectWeek: false,
     weekLabel: "周",
-    dateMin: "",
-    dateMax: ""
+    dateMin: "",// 符合dateFormat设置的日期，如'2017-09-01' 注意：该参数只能用于配置日期 设置后小于该日期将无法被选择
+    dateMax: "" // 符合dateFormat设置的日期，如'2017-09-01' 注意：该参数只能用于配置日期 设置后大于该日期将无法被选择
 }
 ```
 
@@ -86,20 +86,26 @@ related | 开始结束日期是否要联动 | Boolean | false
 
 #### getDates
 
-参数1: readable 是否返回格式化的日期，如果为false，则返回时间戳
-参数2: endTransfered 如果开始结束日期为同一天，且选择类型为日期类型（非日期时间）时，是否处理结束日期的时间戳，即是否需要加上一天的毫秒数-1
+参数1: readable
+是否返回格式化的日期，如果为false，则返回时间戳
+
+参数2: endTransfered
+如果开始结束日期为同一天，且选择类型为日期类型时，是否处理结束日期的时间戳，即是否需要加上一天的毫秒数-1;
+如果开始结束日期为同一天，且选择类型为日期时间类型时，是否处理结束日期的时间戳，即是否需要999毫秒数;
 
 用于开始结束日期组件，获取当前的开始结束日期
 
-注：当type为'date'，且开发者希望获取结束日期的时间为23:59:59秒时，无需添加ops.timeStart属性，只需将该方法的endTransfered参数设置为true即可
+注：当type为'date'，且开发者希望获取结束日期的时间为23:59:59秒时，无需添加ops.timeStart属性，
+只需将该方法的endTransfered参数设置为true即可
 
 ## 注意
 
 组件中日期的传入支持时间戳，当检测到传入的初始日期为时间戳时会自动转换。
 当获取时间时也可以获取时间戳格式的结果，但事件被触发时默认回传格式化的日期
 
+## 已知的bug
 
-
+1. 当设置type:datetime & ralated:true & dateMax dateMin 时，先选择前面的日期，后面的日期在点击input时被清空
 
 
 
