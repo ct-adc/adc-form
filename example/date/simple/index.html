@@ -5,7 +5,7 @@
     <title>list</title>
     <link href="http://static.tcy365.com/cdn/bootstrap/3.3.5/css/bootstrap.dz.min.css" rel="stylesheet">
     <link href="http://static.tcy365.com/cdn/bootstrap/3.3.5/css/theme.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://static.tcy365.com/cdn/component/jdpicker/2.0.1/jdpicker.css"/>
+    <link rel="stylesheet" href="http://static.tcy365.com/cdn/component/jdpicker/2.2.0/jdpicker.css"/>
 </head>
 <body>
 <div id="app">
@@ -14,6 +14,18 @@
             <date @change="changeDate"
                   :initial-date="date"
                   :ops="dateOps"
+                  placeholder="请选择一个时间"
+                  ref="date"></date>
+        </div>
+        <div class="col-sm-2">
+            <button type="button" class="btn btn-sm btn-primary" @click="getDate">获取时间</button>
+        </div>
+    </div>
+    <div class="row mt10">
+        <div class="col-sm-5">
+            <date @change="changeDate"
+                  :initial-date="date"
+                  :ops="{type:'datetime',dateFormat: 'yyyy/MM/dd',timeFormat:'hh:mm:ss', clearBtn: false}"
                   placeholder="请选择一个时间"
                   ref="date"></date>
         </div>
@@ -54,7 +66,7 @@
 </div>
 <script src="http://static.tcy365.com/cdn/jquery/2.1.0/jquery.js"></script>
 <script src="http://static.tcy365.com/cdn/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="http://static.tcy365.com/cdn/component/jdpicker/2.0.1/jdpicker.js"></script>
+<script src="http://static.tcy365.com/cdn/component/jdpicker/2.2.0/jdpicker.js"></script>
 <script src="/asset/js/dateSimple.bundle.js"></script>
 </body>
 </html>

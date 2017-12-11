@@ -46,23 +46,24 @@ related | 开始结束日期是否要联动 | Boolean | false
 
 ```
 {
-    type:'date',
-    dateFormat:'yyyy/MM/dd',
-    timeFormat:'HH:mm:ss',
-    timeStart:'00:00:00',
-    timeBtn:true,
+    type:'date', //可选值: 'date': 日期; datetime':日期时间
+    dateFormat:'yyyy-MM-dd', // 日期格式 如 yyyy/MM/dd
+    timeFormat:'HH:mm:ss', // 时间格式 如 'hh:mm:ss'为12小时制的时间格式
+    timeStart:'00:00:00', // 初始化时间
+    timeBtn:true, // 是否显示时间按钮
+    clearBtn: true, // 是否显示清空按钮
     monthNames:["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
     shortMonthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
     shortMonthNames2: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     shortDayNames: ["日", "一", "二", "三", "四", "五", "六"],
     errorOutOfRange: "选择的日期不符合规则",
-    selectableDays: [0, 1, 2, 3, 4, 5, 6],
+    selectableDays: [0, 1, 2, 3, 4, 5, 6], //  可选择的天
     nonSelectable: [],
     recNonSelectable: [],
-    startOfWeek: 1,
-    showWeek: false,
-    selectWeek: false,
-    weekLabel: "周",
+    startOfWeek: 1, // 每周的开始
+    showWeek: false, // 是否显示周行头
+    selectWeek: false, // 按周选择
+    weekLabel: "周", //showWeek为true时，显示的周的列头内容
     dateMin: "",// 符合dateFormat设置的日期，如'2017-09-01' 注意：该参数只能用于配置日期 设置后小于该日期将无法被选择
     dateMax: "" // 符合dateFormat设置的日期，如'2017-09-01' 注意：该参数只能用于配置日期 设置后大于该日期将无法被选择
 }
