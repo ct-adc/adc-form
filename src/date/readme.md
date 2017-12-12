@@ -108,5 +108,13 @@ related | 开始结束日期是否要联动 | Boolean | false
 
 1. 当设置type:datetime & ralated:true & dateMax dateMin 时，先选择前面的日期，后面的日期在点击input时被清空
 
+## 依赖列表
 
+### 2.1.2
+
+jdpicker 2.1.0
+
+### 2.2.0
+
+jdpicker 2.2.0
 
