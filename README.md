@@ -1,6 +1,6 @@
 ## 提示
 
-该组件已被拆分为[ct-adc-textarea](https://github.com/ct-adc/adc-textarea)[ct-adc-date](https://github.com/ct-adc/adc-date)，
+该组件已被拆分为[ct-adc-textarea](https://github.com/ct-adc/adc-textarea) / [ct-adc-date](https://github.com/ct-adc/adc-date)，
 本组件不再维护。
 
 ## 介绍
